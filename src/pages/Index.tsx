@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 
 const NAV_GROUPS = [
@@ -224,8 +225,15 @@ export default function Index() {
       {/* Claims vs Evidence */}
       <section id="compare" className="border-y border-border bg-foreground text-background">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 py-20">
-          <div className="font-mono text-xs uppercase tracking-[0.3em] text-accent mb-3">§ Claims & Evidence Comparison</div>
-          <h2 className="font-display text-4xl sm:text-5xl font-medium mb-12">What is said · what is shown</h2>
+          <div className="flex items-end justify-between flex-wrap gap-4 mb-12">
+            <div>
+              <div className="font-mono text-xs uppercase tracking-[0.3em] text-accent mb-3">§ Claims & Evidence Comparison</div>
+              <h2 className="font-display text-4xl sm:text-5xl font-medium">What is said · what is shown</h2>
+            </div>
+            <Link to="/claims-evidence" className="inline-flex items-center gap-2 border border-background/30 px-5 py-2.5 text-sm uppercase tracking-wider hover:border-accent hover:text-accent transition-colors">
+              Full Comparison <Icon name="ArrowRight" size={16} />
+            </Link>
+          </div>
           <div className="space-y-px">
             {[
               ['“AA is the most effective path to sobriety.”', 'Controlled outcome data shows comparable or lower retention than several alternative approaches.'],
